@@ -6,4 +6,6 @@
     <string name="hint">Enter keywords to search Google Books</string>
     <string name="button_label">Search</string>
 
+    <!--Connection Error Message -->
+    <string name="mesg_network_error">No Internet Connection Available</string>
 </resources>

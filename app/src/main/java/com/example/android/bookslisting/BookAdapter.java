@@ -8,8 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 
 /**
@@ -36,11 +34,12 @@ public class BookAdapter extends ArrayAdapter<Book> {
         }
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.list_image);
-        Picasso.with(getContext())
-                .load(book.getBookImageURL())
-                .placeholder(R.drawable.placeholder_book)
-                .fit()
-                .into(imageView);
+        if (book.getBookImageURL() != null) {
+            new ImageDownloaderTask(imageView).execute(book.getBookImageURL());
+            imageView.setVisibility(View.VISIBLE);
+        } else {
+            imageView.setVisibility(View.GONE);
+        }
         return convertView;
     }
 }
