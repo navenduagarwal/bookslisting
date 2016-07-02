@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BooksListing</string>
+    <string name="title_activity_results">Search Results</string>
+
+    <!--Home page labels-->
+    <string name="hint">Enter keywords to search Google Books</string>
+    <string name="button_label">Search</string>
+
+</resources>
